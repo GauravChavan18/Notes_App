@@ -9,6 +9,7 @@ const DisplayPage = ({
   setnewgrpdata,
 }) => {
   const [openchatbox, setopenchatbox] = useState(-1);
+  const [changepage, setchangepage] = useState(false);
   return (
     <div className="DisplayPage-div">
       <Dashboard
@@ -17,8 +18,16 @@ const DisplayPage = ({
         newgrpdata={newgrpdata}
         openchatbox={openchatbox}
         setopenchatbox={setopenchatbox}
+        changepage={changepage}
+        setchangepage={setchangepage}
       />
-      <NotesDisplay newgrpdata={newgrpdata} openchatbox={openchatbox} />
+      <NotesDisplay
+        newgrpdata={newgrpdata}
+        openchatbox={openchatbox}
+        setopenchatbox={setopenchatbox}
+        changepage={changepage}
+        setchangepage={setchangepage}
+      />
     </div>
   );
 };

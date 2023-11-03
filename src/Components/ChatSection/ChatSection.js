@@ -1,7 +1,13 @@
 import React, { useState } from "react";
 import "./ChatSection.css";
 import { IoSend } from "react-icons/io5";
-const ChatSection = ({ openchatbox, newgrpdata }) => {
+import { BiArrowBack } from "react-icons/bi";
+const ChatSection = ({
+  openchatbox,
+  newgrpdata,
+  changepage,
+  setchangepage,
+}) => {
   const [chats, setchats] = useState([]);
   const [chatinput, setchatinput] = useState();
   let today = new Date().toUTCString().substring(5, 16);
@@ -15,11 +21,17 @@ const ChatSection = ({ openchatbox, newgrpdata }) => {
 
   function chatsubmit() {
     setchats((chats) => [...chats, { openchatbox, chatinput, ctime, today }]);
+    setchatinput("");
   }
 
+  function gotodashboard() {
+    // console.log(openchatbox);
+    setchangepage(false);
+  }
   return (
     <div className="chatsection-div">
       <div className="groupname-heading">
+        <BiArrowBack className="back-btn" onClick={gotodashboard} />
         {newgrpdata.map((item, index) => (
           <div
             className="chat-div"
@@ -64,6 +76,7 @@ const ChatSection = ({ openchatbox, newgrpdata }) => {
           placeholder="Enter your text here..........."
           className="input-box"
           onChange={chatinputhandler}
+          value={chatinput}
         />
         <IoSend className="send-icon" onClick={chatsubmit} />
       </div>

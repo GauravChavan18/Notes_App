@@ -1,5 +1,5 @@
 .popuppage-div {
-  width: 33vw;
+  width: 33vmax;
   height: 35vh;
   background-color: white;
   color: black;
@@ -52,27 +52,6 @@
   border-radius: 50%;
 }
 
-.first {
-  background-color: rgba(179, 139, 250, 1);
-}
-
-.second {
-  background-color: #ff79f2;
-}
-.third {
-  background-color: rgba(67, 230, 252, 1);
-}
-
-.fourth {
-  background-color: rgba(241, 149, 118, 1);
-}
-.fifth {
-  background-color: rgba(0, 71, 255, 1);
-}
-.sixth {
-  background-color: rgba(102, 145, 255, 1);
-}
-
 .CreateButton {
   background-color: black;
   color: white;
@@ -83,4 +62,61 @@
   position: absolute;
   right: 2vw;
   bottom: 3.5vh;
+}
+
+@media (max-width: 360px) {
+  .popuppage-div {
+    width: 80vw;
+    height: 25vh;
+    position: fixed;
+    top: 35%;
+    left: 10%;
+  }
+
+  .popup-header {
+    margin: 10px 0px 15px 0px;
+    padding-left: 5vw;
+    font-size: 2.5vh;
+  }
+
+  .popupinput-div {
+    padding-left: 4vw;
+    font-size: 2vh;
+    font-weight: 500;
+    margin-bottom: 15px;
+  }
+
+  .popup-input {
+    width: 40vw;
+    height: 3vh;
+    margin-left: 2vw;
+    padding: 4px 0px;
+    padding-left: 12px;
+    font-size: 1.5vh;
+  }
+
+  .colors-div {
+    display: flex;
+    flex-direction: row;
+    /* margin-left: 1vw; */
+    gap: 1vw;
+  }
+
+  .color-div {
+    width: 3vh;
+    height: 3vh;
+    border-radius: 50%;
+  }
+
+  .CreateButton {
+    background-color: black;
+    color: white;
+    width: 35vw;
+    height: 4vh;
+    border-radius: 7px;
+    font-size: 2vh;
+    position: relative;
+    top: 0.5vh;
+    left: 30%;
+  }
 }

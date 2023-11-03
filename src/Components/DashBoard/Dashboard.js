@@ -7,6 +7,8 @@ const Dashboard = ({
   newgrpdata,
   setopenchatbox,
   openchatbox,
+  changepage,
+  setchangepage,
 }) => {
   function openmodalfunc() {
     setmodalopen(true);
@@ -14,9 +16,14 @@ const Dashboard = ({
 
   function chatdivclick(id) {
     setopenchatbox(id);
+    setchangepage(true);
   }
   return (
-    <div className="DashBoard-div">
+    <div
+      className={changepage ? "DashBoard-divmobile" : "DashBoard-div"}
+      //className="DashBoard-div"
+      //style={{ display: openchatbox !== -1 ? "none" : "block" }}
+    >
       <h1 className="DashBoard-header">Pocket Notes</h1>
 
       <button className="DashBoard-button" onClick={openmodalfunc}>
