@@ -3,7 +3,6 @@ import "./Dashboard.css";
 import { BsPlusCircleFill } from "react-icons/bs";
 
 const Dashboard = ({
-  ismodalopen,
   setmodalopen,
   newgrpdata,
   setopenchatbox,
@@ -15,7 +14,6 @@ const Dashboard = ({
 
   function chatdivclick(id) {
     setopenchatbox(id);
-    console.log("clicked on id", id);
   }
   return (
     <div className="DashBoard-div">
@@ -29,7 +27,7 @@ const Dashboard = ({
       <div
         className="chatbox-div"
         style={
-          newgrpdata.length > 8 ? { overflowY: "scroll" } : { overflow: "none" }
+          newgrpdata.length > 7 ? { overflowY: "scroll" } : { overflow: "none" }
         }
       >
         {newgrpdata.map((item, index) => (

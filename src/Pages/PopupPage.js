@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import "../Styles/PopupPage.css";
 import data from "../data.js";
 
@@ -16,9 +16,6 @@ const PopupPage = ({ newgrpdata, setnewgrpdata }) => {
     setnewgrpdata((prevData) => [...prevData, { groupname, colortype }]);
     //console.log(newgrpdata);
   }
-  useEffect(() => {
-    console.log(newgrpdata);
-  }, [newgrpdata]);
 
   return (
     <div className="popuppage-div">

@@ -14,6 +14,7 @@ function App() {
         ismodalopen={ismodalopen}
         setmodalopen={setmodalopen}
         newgrpdata={newgrpdata}
+        setnewgrpdata={setnewgrpdata}
       />
       {ismodalopen ? (
         <PopupPage newgrpdata={newgrpdata} setnewgrpdata={setnewgrpdata} />
