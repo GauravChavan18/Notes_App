@@ -19,6 +19,12 @@ const ChatSection = ({
     setchatinput(event.target.value);
   }
 
+  function handleKeyDown(event) {
+    if (event.key === "Enter") {
+      setchats((chats) => [...chats, { openchatbox, chatinput, ctime, today }]);
+      setchatinput("");
+    }
+  }
   function chatsubmit() {
     setchats((chats) => [...chats, { openchatbox, chatinput, ctime, today }]);
     setchatinput("");
@@ -77,6 +83,7 @@ const ChatSection = ({
           className="input-box"
           onChange={chatinputhandler}
           value={chatinput}
+          onKeyDown={handleKeyDown}
         />
         <IoSend className="send-icon" onClick={chatsubmit} />
       </div>
