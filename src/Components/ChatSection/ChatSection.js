@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./ChatSection.css";
 import { IoSend } from "react-icons/io5";
 import { BiArrowBack } from "react-icons/bi";
@@ -8,8 +8,14 @@ const ChatSection = ({
   changepage,
   setchangepage,
 }) => {
+  useEffect(() => {
+    const localStorageItems = JSON.parse(localStorage.getItem("chats"));
+    if (localStorageItems) {
+      setchats(localStorageItems);
+    }
+  }, []);
   const [chats, setchats] = useState([]);
-  const [chatinput, setchatinput] = useState();
+  const [chatinput, setchatinput] = useState("");
   let today = new Date().toUTCString().substring(5, 16);
   let ctime = new Date().toLocaleTimeString([], {
     hour: "2-digit",
@@ -22,11 +28,19 @@ const ChatSection = ({
   function handleKeyDown(event) {
     if (event.key === "Enter") {
       setchats((chats) => [...chats, { openchatbox, chatinput, ctime, today }]);
+      localStorage.setItem(
+        "chats",
+        JSON.stringify([...chats, { openchatbox, chatinput, ctime, today }])
+      );
       setchatinput("");
     }
   }
   function chatsubmit() {
     setchats((chats) => [...chats, { openchatbox, chatinput, ctime, today }]);
+    localStorage.setItem(
+      "chats",
+      JSON.stringify([...chats, { openchatbox, chatinput, ctime, today }])
+    );
     setchatinput("");
   }
 

@@ -20,6 +20,7 @@ const DisplayPage = ({
         setopenchatbox={setopenchatbox}
         changepage={changepage}
         setchangepage={setchangepage}
+        setnewgrpdata={setnewgrpdata}
       />
       <NotesDisplay
         newgrpdata={newgrpdata}

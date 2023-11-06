@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./Dashboard.css";
 import { BsPlusCircleFill } from "react-icons/bs";
 
@@ -9,7 +9,14 @@ const Dashboard = ({
   openchatbox,
   changepage,
   setchangepage,
+  setnewgrpdata,
 }) => {
+  useEffect(() => {
+    const localStorageItems = JSON.parse(localStorage.getItem("newgrpdata"));
+    if (localStorageItems) {
+      setnewgrpdata(localStorageItems);
+    }
+  }, [setnewgrpdata]);
   function openmodalfunc() {
     setmodalopen(true);
   }

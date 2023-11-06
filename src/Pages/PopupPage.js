@@ -15,6 +15,10 @@ const PopupPage = ({ newgrpdata, setnewgrpdata }) => {
   function createnewgroup() {
     setnewgrpdata((prevData) => [...prevData, { groupname, colortype }]);
     //console.log(newgrpdata);
+    localStorage.setItem(
+      "newgrpdata",
+      JSON.stringify([...newgrpdata, { groupname, colortype }])
+    );
   }
 
   return (
