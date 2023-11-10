@@ -17,6 +17,7 @@ A simple note-taking web application built with ReactJS, allowing users to organ
 3. **Save Notes**: Notes can be saved either by pressing the Enter key or by clicking the Save button. All notes and group information persist in the local storage, ensuring data persistence across page reloads.
 
 4. **Metadata Tracking**: The application captures metadata such as the date and time when a note is saved and last updated, providing users with additional context about their notes.
+5. **Mobile Responsiveness:**: Ensures a seamless and responsive user experience on various devices, from desktops to mobiles.
 
 ## Getting Started
 
@@ -34,4 +35,4 @@ The application will be accessible at `http://localhost:3000` by default.
 - ReactJS: A JavaScript library for building user interfaces.
 - HTML/CSS: Basic styling and structure for the application.
 - Local Storage: Used for persisting notes and group information on the client-side.
-
+- Mobile-First Design: Ensures responsiveness across devices.
