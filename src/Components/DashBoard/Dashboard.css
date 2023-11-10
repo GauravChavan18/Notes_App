@@ -29,16 +29,22 @@
   color: white;
   border-radius: 20px;
   width: 18vw;
-  height: 5vh;
+  height: 6vh;
   margin: auto;
+  font-size: 2.5vh;
+  font-weight: 500;
 }
-
+.addnotesicon {
+  size: 50;
+  color: white;
+}
 .chatbox-div {
   width: 100%;
   margin-top: 30px;
   height: 79vh;
   padding-left: 30px;
   box-sizing: border-box;
+  overflow-y: scroll;
 }
 
 .chat-div {

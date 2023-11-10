@@ -5,6 +5,7 @@ import data from "../data.js";
 const PopupPage = ({ newgrpdata, setnewgrpdata }) => {
   const [groupname, setgroupname] = useState("");
   const [colortype, setcolortype] = useState();
+
   function changehandler(event) {
     setgroupname(event.target.value);
   }
@@ -14,7 +15,7 @@ const PopupPage = ({ newgrpdata, setnewgrpdata }) => {
   }
   function createnewgroup() {
     setnewgrpdata((prevData) => [...prevData, { groupname, colortype }]);
-    //console.log(newgrpdata);
+
     localStorage.setItem(
       "newgrpdata",
       JSON.stringify([...newgrpdata, { groupname, colortype }])

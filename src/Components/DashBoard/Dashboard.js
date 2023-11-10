@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import "./Dashboard.css";
 import { BsPlusCircleFill } from "react-icons/bs";
-
+import { AiOutlinePlus } from "react-icons/ai";
 const Dashboard = ({
   setmodalopen,
   newgrpdata,
@@ -26,24 +26,15 @@ const Dashboard = ({
     setchangepage(true);
   }
   return (
-    <div
-      className={changepage ? "DashBoard-divmobile" : "DashBoard-div"}
-      //className="DashBoard-div"
-      //style={{ display: openchatbox !== -1 ? "none" : "block" }}
-    >
+    <div className={changepage ? "DashBoard-divmobile" : "DashBoard-div"}>
       <h1 className="DashBoard-header">Pocket Notes</h1>
 
       <button className="DashBoard-button" onClick={openmodalfunc}>
-        <BsPlusCircleFill />
-        Create Notes group
+        <AiOutlinePlus className="addnotesicon" size={25} />
+        Create Notes Group
       </button>
 
-      <div
-        className="chatbox-div"
-        style={
-          newgrpdata.length > 7 ? { overflowY: "scroll" } : { overflow: "none" }
-        }
-      >
+      <div className="chatbox-div">
         {newgrpdata.map((item, index) => (
           <div
             className="chat-div"
